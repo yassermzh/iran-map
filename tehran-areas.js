@@ -1,6 +1,6 @@
 var fs = require('fs')
 // downloaded geojson from mapzen.com
-var content = fs.readFileSync('/Users/yasser/Downloads/tehran_iran.imposm-geojson/tehran_iran_admin.geojson')
+var content = fs.readFileSync('./maps/tehran_iran_admin.geojson')
 content = JSON.parse(content)
 
 function toNumber(persianNumber) {
@@ -22,4 +22,4 @@ content.features = content.features
   })
 
 //console.log('areas:', content.features, content.features.length)
-fs.writeFileSync('tehran_iran_areas.geojson', JSON.stringify(content), {encoding: 'utf8'})
+fs.writeFileSync('dist/tehran_areas.geojson', JSON.stringify(content), {encoding: 'utf8'})
